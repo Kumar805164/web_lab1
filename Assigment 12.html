@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Handling with jQuery</title>
+    <!-- Include jQuery library -->
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <style>
+        body {
+            text-align: center;
+            margin-top: 50px;
+        }
+        #output {
+            font-size: 24px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Event Handling with jQuery</h1>
+    
+    <p>Click anywhere on the page and press a key on the keyboard.</p>
+
+    <div id="output">Event information will appear here.</div>
+
+    <script>
+        $(document).ready(function() {
+            
+            // Mouse click event
+            $(document).on('click', function(event) {
+                showEventData('Mouse Click', event);
+            });
+
+            // Keyboard key press event
+            $(document).on('keypress', function(event) {
+                showEventData('Key Press', event);
+            });
+
+            function showEventData(type, event) {
+                // Display event information in the #output div
+                $('#output').html(
+                    '<strong>' + type + ':</strong> ' +
+                    'Key Code: ' + event.which + ', ' +
+                    'Key: ' + String.fromCharCode(event.which) + ', ' +
+                    'Mouse Position: (' + event.pageX + ', ' + event.pageY + ')'
+                );
+            }
+
+        });
+    </script>
+
+</body>
+</html>

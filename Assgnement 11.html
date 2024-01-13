@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script> 
+$(document).ready(function(){
+  $("#flip").click(function(){
+    $("#panel").slideDown("slow");
+  });
+});
+</script>
+<style> 
+ #flip {
+  margin-left: 15rem;
+  margin-right: 15rem;
+  text-align: center;
+  padding-top: 10px;
+  border: solid 1px #e11d1d;
+  padding-right: 20px;
+  font-size: 1.2rem;
+}
+
+#panel {
+  padding: 50px;
+  
+  display: none;
+  margin-left: 15rem;
+  margin-right: 15rem;
+  text-align: center;
+  background-color: #9bcdf3;
+  padding-right: 20px;
+  font-size: 1.2rem;
+}
+</style>
+</head>
+<body>
+ 
+<div id="flip">Click to slide down panel</div>
+<div id="panel">
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores atque necessitatibus doloremque unde, itaque exercitationem quia temporibus recusandae repellat incidunt nihil facilis nesciunt porro illo, sequi enim quos error odit?</p>
+</div>
+
+</body>
+</html>

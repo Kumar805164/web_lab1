@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Sum of n Numbers</title>
+</head>
+<style>
+    
+    *{
+        font-family: sans-serif;
+    }
+    
+    .container{ 
+        text-align: center;
+        background-color: rgb(255, 255, 255);
+        width: 300px;
+        border: 7px solid rgb(0, 190, 242);
+        padding: 30px;
+        margin: 20px;
+        border-radius: 10px;
+
+    }
+    .container h1{
+font-family: cursive;
+color: rgb(212, 28, 28);
+text-decoration: underline;
+    }
+    .container p{
+        font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    }
+    .container input{
+        font-size: 20px;
+    }
+    .container #result{
+        font-size: 17px;
+        color: crimson;
+    }
+    .container button{
+        font-size: 17px;
+        background-color: rgb(103, 235, 242);
+        border-radius: 5px;
+
+    }
+    .container button:hover{
+        background-color: rgb(255, 255, 255);   
+    }
+    .container span{
+        color: black;  
+        font-size: 25px;
+    }
+   
+</style>
+<body>
+        <div class="container">
+            <h1>Sum of n Numbers</h1>
+                    <p>Enter numbers separated by spaces: (e.g., 1, 2, 3.......)</p>
+                    <input type="text" id="numberInput" placeholder="Enter numbers" />
+                    <p id="result">Sum of N number : <span id="sum">0</span></p>
+                    <button onclick="calculateSum()">Calculate Sum</button>
+                    
+        </div>
+    
+      
+
+    <script>
+        function calculateSum() {
+            const numberInput = document.getElementById("numberInput").value;
+            const numbers = numberInput.split(" ");
+
+            let sum = 0;
+            for (let i = 0; i < numbers.length; i++) {
+                const num = parseFloat(numbers[i]);
+                if (!isNaN(num)) {
+                    sum=num*(num+1)/2;
+                }
+            }
+
+            document.getElementById("sum").textContent = sum;
+        }
+    </script>
+</body>
+</html>

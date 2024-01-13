@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accordion Example</title>
+    <!-- Include jQuery library -->
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        h1{
+            text-align: center;
+        }
+        .accordion {
+            width: 300px;
+            margin: 20px auto;
+            border-radius: 5rem;
+        }
+        .accordion-section {
+            background-color: #f2acac;
+            margin-bottom: 5px;
+            cursor: pointer;
+            border-radius: 2rem;
+        }
+        .accordion-title {
+            padding: 10px;
+            font-weight: bold;
+        }
+        .accordion-content {
+            display: none;
+            padding: 10px;
+            background: #b9b6b6;
+            border-radius: 2rem;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Accordion Example</h1>
+
+    <div class="accordion">
+        <div class="accordion-section">
+            <div class="accordion-title">Section 1</div>
+            <div class="accordion-content">
+                <p>Content for Section 1.</p>
+            </div>
+        </div>
+        <div class="accordion-section">
+            <div class="accordion-title">Section 2</div>
+            <div class="accordion-content">
+                <p>Content for Section 2.</p>
+            </div>
+        </div>
+        <div class="accordion-section">
+            <div class="accordion-title">Section 3</div>
+            <div class="accordion-content">
+                <p>Content for Section 3.</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        $(document).ready(function() {
+            // Accordion functionality
+            $('.accordion-title').click(function() {
+                // Toggle the content of the clicked section
+                $(this).next('.accordion-content').slideToggle();
+                // Hide the other sections' content
+                $('.accordion-content').not($(this).next()).slideUp();
+            });
+        });
+    </script>
+
+</body>
+</html>
+
